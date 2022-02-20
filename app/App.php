@@ -31,6 +31,8 @@
             $transactions[] = $transaction;
         }
 
+        fclose($file);
+
         return $transactions;
     }
 

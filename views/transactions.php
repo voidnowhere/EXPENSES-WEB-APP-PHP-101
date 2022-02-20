@@ -53,7 +53,7 @@
                 <tr>
                     <th colspan="3">Total Income:</th>
                     <td><?= formatDollarAmount($totals['income'] ?? 0) ?></td>
-                </tr
+                </tr>
                 <tr>
                     <th colspan="3">Total Expense:</th>
                     <td><?= formatDollarAmount($totals['expense'] ?? 0) ?></td>

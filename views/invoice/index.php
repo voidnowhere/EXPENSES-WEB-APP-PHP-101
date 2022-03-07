@@ -24,6 +24,9 @@
         </style>
     </head>
     <body>
+        <a href="/">Home</a>
+        <br>
+        <a href="/invoice/upload">Upload Invoice</a>
         <table>
             <thead>
                 <tr>
@@ -34,15 +37,15 @@
                 </tr>
             </thead>
             <tbody>
-                <?php if (!empty($transactions)): ?>
-                    <?php foreach ($transactions as $transaction): ?>
+                <?php if (!empty($params['transactions'])): ?>
+                    <?php foreach ($params['transactions'] as $transaction): ?>
                         <tr>
-                            <td><?= $transaction['date'] ?></td>
-                            <td><?= $transaction['checkNumber'] ?></td>
+                            <td><?= \App\Models\Invoice::formatDate('M d, Y', $transaction['date']) ?></td>
+                            <td><?= $transaction['check'] ?></td>
                             <td><?= $transaction['description'] ?></td>
                             <td>
-                                <span style="color: <?= ($transaction['amount'] > 0) ? 'green' : 'red' ?>">
-                                    <?= formatDollarAmount($transaction['amount']) ?>
+                                <span style="color: <?= ($transaction['amount'] >= 0) ? 'green' : 'red' ?>">
+                                    <?= \App\Models\Invoice::formatDollarAmount($transaction['amount']) ?>
                                 </span>
                             </td>
                         </tr>
@@ -52,15 +55,15 @@
             <tfoot>
                 <tr>
                     <th colspan="3">Total Income:</th>
-                    <td><?= formatDollarAmount($totals['income'] ?? 0) ?></td>
+                    <td><?= \App\Models\Invoice::formatDollarAmount($params['income']) ?? '$0' ?></td>
                 </tr>
                 <tr>
                     <th colspan="3">Total Expense:</th>
-                    <td><?= formatDollarAmount($totals['expense'] ?? 0) ?></td>
+                    <td><?= \App\Models\Invoice::formatDollarAmount($params['expense']) ?? '$0' ?></td>
                 </tr>
                 <tr>
                     <th colspan="3">Net Total:</th>
-                    <td><?= formatDollarAmount($totals['net'] ?? 0) ?></td>
+                    <td><?= \App\Models\Invoice::formatDollarAmount($params['total']) ?? '$0' ?></td>
                 </tr>
             </tfoot>
         </table>

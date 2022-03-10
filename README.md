@@ -6,6 +6,18 @@
 <hr>
 
 ## Setting up in:
+### This is the database creation script:
+```mysql
+create database if not exists expensesApp;
+use expensesApp;
+create table if not exists invoice(
+    id int unsigned primary key auto_increment,
+    date int unsigned,
+    t_check int,
+    description varchar(255),
+    amount double
+);
+```
 ### `Docker` <- [in 100 Seconds ?](https://youtu.be/Gjnup-PuquQ):
 * Clone project wherever you want.
 * Install [Docker](https://www.docker.com/get-started).
@@ -25,6 +37,15 @@
 ```bash
   composer install
 ```
+* using host: `localhost`, port: `3306`, user: `root`, password: `root` connect to `MySQL` database and launch the script given above.
+* create .env file containing:
+```text
+DB_HOST=db
+DB_USER=root
+DB_PASS=root
+DB_DATABASE=expensesApp
+```
+* Test this out in [localhost](http://localhost:8000/).
 ### `XAMPP` or alternatives:
 * Clone project inside htdocs or the alternative default folder.
 * [Get composer](https://getcomposer.org/).
@@ -32,16 +53,12 @@
 ```bash
   composer install
 ```
-* using host: `localhost`, port: `3306`, user: `root`, password: `root` connect to `MySQL` database and launch this script:
-```mysql
-create database if not exists expensesApp;
-use expensesApp;
-create table if not exists invoice(
-    id int unsigned primary key auto_increment,
-    date int unsigned,
-    t_check int,
-    description varchar(255),
-    amount double
-);
+* using host: `localhost`, port: `3306`, user: `root` connect to `MySQL` database and launch the script given above.
+* create .env file containing:
+```text
+DB_HOST=localhost
+DB_USER=root
+DB_PASS=
+DB_DATABASE=expensesApp
 ```
-* Test this out in [localhost](http://localhost:8000/).
+* Test this out in [localhost](http://localhost/).

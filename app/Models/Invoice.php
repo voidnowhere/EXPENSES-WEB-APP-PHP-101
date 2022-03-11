@@ -37,11 +37,11 @@ class Invoice extends Model
     {
         $transactions = $this->getTransactionsFromFiles($files);
 
-        $stmt = $this->db->prepare('INSERT INTO invoice VALUES(NULL, :date, :check, :description, :amount)');
+        $stmt = $this->db->prepare('INSERT INTO invoice VALUES(NULL, :timestamp, :checkNum, :description, :amount)');
         foreach ($transactions as $transaction) {
             $stmt->execute([
-                'date' => $transaction['date'],
-                'check' => $transaction['check'],
+                'timestamp' => $transaction['timestamp'],
+                'checkNum' => $transaction['checkNum'],
                 'description' => $transaction['description'],
                 'amount' => $transaction['amount'],
             ]);
@@ -64,8 +64,8 @@ class Invoice extends Model
 
             while ($transaction = fgetcsv($file)) {
                 $transactions[] = [
-                    'date' => $this->getUnixTimestamp('m/d/Y', $transaction[0]),
-                    'check' => $transaction[1],
+                    'timestamp' => $this->getUnixTimestamp('m/d/Y', $transaction[0]),
+                    'checkNum' => $transaction[1],
                     'description' => $transaction[2],
                     'amount' => $this->parseTransactionAmount($transaction[3])
                 ];

@@ -40,8 +40,8 @@
                 <?php if (!empty($params['transactions'])): ?>
                     <?php foreach ($params['transactions'] as $transaction): ?>
                         <tr>
-                            <td><?= \App\Models\Invoice::formatDate('M d, Y', $transaction['date']) ?></td>
-                            <td><?= $transaction['check'] ?></td>
+                            <td><?= \App\Models\Invoice::formatDate('M d, Y', $transaction['timestamp']) ?></td>
+                            <td><?= $transaction['checkNum'] ?></td>
                             <td><?= $transaction['description'] ?></td>
                             <td>
                                 <span style="color: <?= ($transaction['amount'] >= 0) ? 'green' : 'red' ?>">

@@ -12,8 +12,8 @@ create database if not exists expensesApp;
 use expensesApp;
 create table if not exists invoice(
     id int unsigned primary key auto_increment,
-    date int unsigned,
-    t_check int,
+    timestamp int unsigned,
+    checkNum int,
     description varchar(255),
     amount double
 );

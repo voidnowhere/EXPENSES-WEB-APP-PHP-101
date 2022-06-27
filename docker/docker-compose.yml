@@ -15,7 +15,7 @@ services:
     container_name: EXPENSES-WEB-APP-PHP-101-nginx
     restart: always
     ports:
-      - 8000:80
+      - 8001:80
     volumes:
       - ../:/var/www
       - ./nginx:/etc/nginx/conf.d

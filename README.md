@@ -23,19 +23,19 @@ create table if not exists invoice(
 * Install [Docker](https://www.docker.com/get-started).
 * From project path:
 ```bash 
-  cd docker
+cd docker
 ```
 * To build docker image and run it:
 ```bash
-  docker-compose up -d
+docker-compose up -d
 ```
 * SSH into docker container:
 ```bash
-  docker exec -it EXPENSES-WEB-APP-PHP-101-app bash
+docker exec -it EXPENSES-WEB-APP-PHP-101-app bash
 ```
 * Installing project dependencies:
 ```bash
-  composer install
+composer install
 ```
 * using host: `localhost`, port: `3306`, user: `root`, password: `root` connect to `MySQL` database and launch the script given above.
 * create .env file containing:
@@ -51,7 +51,7 @@ DB_DATABASE=expensesApp
 * [Get composer](https://getcomposer.org/).
 * From project path:
 ```bash
-  composer install
+composer install
 ```
 * using host: `localhost`, port: `3306`, user: `root` connect to `MySQL` database and launch the script given above.
 * create .env file containing:

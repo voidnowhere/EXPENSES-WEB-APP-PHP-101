@@ -61,4 +61,4 @@ DB_USER=root
 DB_PASS=
 DB_DATABASE=expensesApp
 ```
-* Test this out in [localhost](http://localhost/).
+* Test this out in [localhost](http://localhost:8001/).

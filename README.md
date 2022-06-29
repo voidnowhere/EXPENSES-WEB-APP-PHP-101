@@ -1,7 +1,7 @@
-# EXPENSES-WEB-APP-PHP-101
+# PHP101
 ### I decided to learn PHP and then i found [Learn PHP The Right Way](https://youtube.com/playlist?list=PLr3d3QYzkw2xabQRUpcZ_IBk9W50M9pe-).
 ### This is a project from the playlist so i could practice.
-#### Its an app that takes multiple csv files containing transactions composed from ***(Date, Check, Description, Amount)***.
+#### Its an app that takes multiple csv files containing transactions composed from ***(Date, Check, Description, Amount)*** and stores them to database.
 
 <hr>
 

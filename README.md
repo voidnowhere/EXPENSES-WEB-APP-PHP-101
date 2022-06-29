@@ -37,7 +37,7 @@ docker exec -it EXPENSES-WEB-APP-PHP-101-app bash
 ```bash
 composer install
 ```
-* using host: `localhost`, port: `3306`, user: `root`, password: `root` connect to `MySQL` database and launch the script given above.
+* using host: `localhost`, port: `3307`, user: `root`, password: `root` connect to `MySQL` database and launch the script given above.
 * create .env file containing:
 ```text
 DB_HOST=db

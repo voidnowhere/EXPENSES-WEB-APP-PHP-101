@@ -45,7 +45,7 @@ DB_USER=root
 DB_PASS=root
 DB_DATABASE=expensesApp
 ```
-* Test this out in [localhost](http://localhost:8000/).
+* Test this out in [localhost](http://localhost:8001/).
 ### `XAMPP` or alternatives:
 * Clone project inside htdocs or the alternative default folder.
 * [Get composer](https://getcomposer.org/).

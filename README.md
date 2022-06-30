@@ -31,7 +31,7 @@ docker-compose up -d
 ```
 * SSH into docker container:
 ```bash
-docker exec -it EXPENSES-WEB-APP-PHP-101-app bash
+docker exec -it php101-app bash
 ```
 * Installing project dependencies:
 ```bash
